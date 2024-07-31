@@ -1,0 +1,17 @@
+COMPARAÇÃO DOS TEMPOS DE EXECUÇÃO
+
+
+num.1000.1.txt  		(Selection Sort): 18733400 nanossegundos		(Insertion Sort): 18558600 nanossegundos
+num.1000.2.txt  		(Selection Sort): 16858400 nanossegundos		(Insertion Sort): 16886100 nanossegundos
+num.1000.3.txt  		(Selection Sort): 19337500 nanossegundos		(Insertion Sort): 14702200 nanossegundos
+num.1000.4.txt  		(Selection Sort): 19682800 nanossegundos		(Insertion Sort): 15590800 nanossegundos
+
+num.10000.1.txt 		(Selection Sort): 126243000 nanossegundos		(Insertion Sort): 84914200 nanossegundos
+num.10000.2.txt 		(Selection Sort): 124767400 nanossegundos		(Insertion Sort): 89859700 nanossegundos
+num.10000.3.txt 		(Selection Sort): 125657400 nanossegundos		(Insertion Sort): 89948700 nanossegundos
+num.10000.4.txt 		(Selection Sort): 125664300 nanossegundos		(Insertion Sort): 90599200 nanossegundos
+
+num.100000.1.txt		(Selection Sort): 9380575000 nanossegundos		(Insertion Sort): 7507075700 nanossegundos
+num.100000.2.txt		(Selection Sort): 9631154300 nanossegundos		(Insertion Sort): 7447642200 nanossegundos
+num.100000.3.txt		(Selection Sort): 9450974600 nanossegundos		(Insertion Sort): 7431655600 nanossegundos
+num.100000.4.txt		(Selection Sort): 9383823600 nanossegundos		(Insertion Sort): 7448539900 nanossegundos
