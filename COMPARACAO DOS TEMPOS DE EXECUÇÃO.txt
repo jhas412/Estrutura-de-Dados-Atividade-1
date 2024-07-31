@@ -1,3 +1,5 @@
+Aluno:	João Henrique Alves de Sousa
+
 COMPARAÇÃO DOS TEMPOS DE EXECUÇÃO
 
 
