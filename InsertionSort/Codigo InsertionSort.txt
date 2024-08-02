@@ -1,0 +1,85 @@
+UFPB - Universidade Federal da Paraíba
+Curso: Ciências da Computação
+Aluno: João Henrique Alves de Sousa
+Matricula: 20230012690
+Disciplina: Estrutura de dados
+Professor Gilberto Farias
+Período: 2024.1
+
+
+				Atividade Ordenação
+
+
+
+//Aluno:João Henrique Alves de Sousa
+
+package insertionsort;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class InsertionSort {
+
+    public static void main(String[] args) {
+        System.out.println("""
+                           Digite o nome do arquivo a ser lido: 
+                           num.1000.1.txt
+                           num.1000.2.txt
+                           num.1000.3.txt
+                           num.1000.4.txt
+                           num.10000.1.txt
+                           num.10000.2.txt
+                           num.10000.3.txt
+                           num.10000.4.txt
+                           num.100000.1.txt
+                           num.100000.2.txt
+                           num.100000.3.txt
+                           num.100000.4.txt""");
+        Scanner scanner = new Scanner(System.in);
+        String filePath = scanner.nextLine();
+        long tempoInicio = System.nanoTime();
+        List<Double> numeros = lerNumerosDoArquivo(filePath);
+        System.out.println("Numeros antes da ordenacao: " + numeros);
+        insertionSort(numeros);
+        System.out.println("Numeros apos a ordenacao: " + numeros);
+        long tempoFim = System.nanoTime();
+        long tempoTotal = tempoFim - tempoInicio;
+
+        System.out.println("Tempo total de execucao (Insertion Sort): " + tempoTotal + " nanossegundos");
+    }
+    
+    private static List<Double> lerNumerosDoArquivo(String filePath) {
+        List<Double> numeros = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+            String linha;
+            while ((linha = br.readLine()) != null) {
+                try {
+                    numeros.add(Double.parseDouble(linha.trim()));
+                } catch (NumberFormatException e) {
+                    System.err.println("Erro ao converter a linha: " + linha);
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Erro ao ler o arquivo: " + e.getMessage());
+        }
+        return numeros;
+    }
+
+    private static void insertionSort(List<Double> lista) {
+        int n = lista.size();
+        for (int i = 1; i < n; i++) {
+            double chave = lista.get(i);
+            int j = i - 1;
+            while (j >= 0 && lista.get(j) > chave) {
+                lista.set(j + 1, lista.get(j));
+                j--;
+            }
+            lista.set(j + 1, chave);
+        }
+    }
+}
+
